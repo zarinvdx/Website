@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--form section-->
+    <main>
+        <section id="contact-form">
+            <h2>Send us a Message</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" oninput="setCustomValidity(validateName(this.value))">
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required oninput="setCustomValidity('')" onchange="setCustomValidity(validateEmail(this.value))">
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required oninput="setCustomValidity('')" onchange="setCustomValidity(validateMessage(this.value))"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: soiree@co.uk.</p>
+            <p>Phone: +44 7350 9178 29</p>
+            <p>Address: Canada Square, London</p>
+        </section>
+    </main>
+    
+    <!--footer-->
+    <footer class="footer">
+        <p>&copy; 2023 Soiree. All rights reserved. | Zarin Subah |  Email: soiree@co.uk. | Phone: +44 7350 9178 29</p>
+        <!--Customized Presentation-->
+        <button class="customize"onclick="customizePresentation()">Customize Presentation</button>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
